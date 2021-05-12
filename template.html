@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Who is going to ARC?</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- <h1 style="text-align: center;">Twitchians that are going to...</h1> -->
+  <p style="text-align: center;">
+    <img src="arc-music-festival-ravejungle.png" alt="ARC Header">
+  </p>
+
+  <div class="communities">
+    {% for community in communities.values() %}
+    <div class="community">
+      <img src="{{ community['icon_url'] }}" alt="{{ community['display_name'] }}" title="{{ community['display_name'] }}">
+    </div>
+    {% endfor %}
+  </div>
+
+  <div class="twitchians">
+    {% for twitchian in twitchians %}
+    <div class="twitchian">
+      <a href="https://twitch.tv/{{ twitchian['username'] }}" target="_blank" class="avatar">
+        <img src="{{ twitchian['avatar_url'] }}" alt="{{ twitchian['username'] }}" title="{{ twitchian['username'] }}">
+      </a>
+      <p class="name">{{ twitchian['username'] }}</p>
+      <div class="communities">
+        {% for community in twitchian['communities'] %}
+          {% set c = communities[community] %}
+          <img src="{{ c['icon_url'] }}" alt="{{ c['display_name'] }}" title="{{ c['display_name'] }}">
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+    
+  </div>
+</body>
+</html>

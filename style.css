@@ -1,26 +1,36 @@
 body {
   background-color: #AEFC30;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.communities {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.communities img {
+  filter: drop-shadow(2px 4px 6px #333);
 }
 
 .twitchian {
-  width: 150px;
+  width: 250px;
   border: 1px #64E0B8 solid;
   flex-grow: 1;
-  /* flex-wrap: wrap; */
   text-align: center;
-  background: linear-gradient(-45deg, #64E0B8, #BEF341);
+  background: linear-gradient(-45deg, #64E0B8, #ECFC08);
   margin: 0 10px 10px 0;
   border-radius: 3px;
+  padding: 5px;
 }
-
 .twitchian:last-child {
   margin-right: 0;
 }
-
+.twitchian .communities {
+  height: 30px;
+}
 .twitchian .communities img {
-  /* backdrop-filter: blur(5px); */
   filter: drop-shadow(2px 4px 6px #333);
+  width: 24px;
 }
 
 .twitchians {
@@ -30,6 +40,4 @@ body {
   flex-wrap: wrap;
 }
 
-.communities img {
-  width: 48px;
-}
+/*# sourceMappingURL=style.css.map */

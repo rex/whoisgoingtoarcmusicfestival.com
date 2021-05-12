@@ -1,0 +1,50 @@
+{
+  "communities": {
+    "deepfake": {
+      "name": "deepfake",
+      "display_name": "Deep Fake",
+      "icon_url": "https://static-cdn.jtvnw.net/emoticons/v1/304188928/2.0",
+      "url": "https://twitch.tv/deepfakeofficial"
+    },
+    "holefam": {
+      "name": "holefam",
+      "display_name": "Hole Fam",
+      "icon_url": "https://static-cdn.jtvnw.net/badges/v1/0bb436f3-8c36-4312-ba07-5f6ce782799e/3",
+      "url": "https://twitch.tv/maxgrahamtv"
+    },
+    "octopus": {
+      "name": "octopus",
+      "display_name": "Octopus Recordings",
+      "icon_url": "https://static-cdn.jtvnw.net/emoticons/v1/305727759/2.0",
+      "url": "https://twitch.tv/djsianofficial"
+    },
+    "circuit": {
+      "name": "circuit",
+      "display_name": "Circuit",
+      "icon_url": "https://static-cdn.jtvnw.net/emoticons/v1/302736070/2.0",
+      "url": "https://twitch.tv/circuitaz"
+    }
+  },
+  "twitchians": [
+    {
+      "username": "PierceMoore",
+      "avatar_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/beda0789-a433-4669-91d5-4e3504fa34ff-profile_image-70x70.png",
+      "communities": [ "deepfake", "octopus", "circuit", "holefam" ]
+    },
+    {
+      "username": "MichelleAnnPhoto",
+      "avatar_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/b8b039ad-a402-40c0-b261-cb804b37eb7c-profile_image-70x70.png",
+      "communities": [ "deepfake" ]
+    },
+    {
+      "username": "AlleyKayDJ",
+      "avatar_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/2e3de7b9-9a4e-4940-8952-7626fccba421-profile_image-70x70.png",
+      "communities": []
+    },
+    {
+      "username": "Mearzie",
+      "avatar_url": "https://static-cdn.jtvnw.net/jtv_user_pictures/39c9c4bf-1476-407f-bcc5-dc1edc358bf6-profile_image-70x70.png",
+      "communities": [ "holefam" ]
+    }
+  ]
+}
