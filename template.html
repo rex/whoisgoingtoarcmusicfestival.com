@@ -6,24 +6,77 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Who is going to ARC?</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    function onload(fn) {
+      if (document.readyState != "loading") {
+        fn()
+      } else {
+        document.addEventListener('DOMContentLoaded', fn)
+      }
+    }
+
+    onload(function() {
+      const comm_buttons = document.querySelectorAll('a.community')
+      const all_people = document.querySelectorAll('div.twitchian')
+
+      comm_buttons.forEach(function($btn) {
+        $btn.addEventListener('click', function(e) {
+          e.preventDefault()
+          const anchor = e.target.closest("a")
+          if (!anchor) return
+          const community = anchor.getAttribute('data-community')
+          console.log(community, anchor, e)
+          if (anchor.classList.contains('selected')) {
+            // This was selected, let's just reset everything
+            comm_buttons.forEach(function($el) {
+              $el.classList.remove('disabled', 'selected')
+            })
+            all_people.forEach(function($el) {
+              $el.classList.remove('hidden')
+            })
+          } else {
+            anchor.classList.remove('disabled')
+            anchor.classList.add('selected')
+            const others = document.querySelectorAll(`.communities .community:not([data-community=${community}])`)
+            others.forEach(function($el) {
+              $el.classList.remove('selected')
+              $el.classList.add('disabled')
+            })
+            // Now show/hide the correct people
+            const show_people = document.querySelectorAll(`.twitchian.community-${community}`)
+            const hide_people = document.querySelectorAll(`.twitchian:not(.community-${community})`)
+            show_people.forEach(function($el) {
+              $el.classList.remove('hidden')
+            })
+            hide_people.forEach(function($el) {
+              $el.classList.add('hidden')
+            })
+          }
+        })
+      })
+    })
+  </script>
 </head>
 <body>
   <!-- <h1 style="text-align: center;">Twitchians that are going to...</h1> -->
-  <p style="text-align: center;">
+  <p class="header-image">
     <img src="arc-music-festival-ravejungle.png" alt="ARC Header">
   </p>
 
+  <div class="community-help">
+    <h3>Click to filter by community. Click again to reset.</h3>
+  </div>
   <div class="communities">
     {% for community in communities.values() %}
-    <div class="community">
+    <a href="#" class="community" data-community="{{ community['name'] }}">
       <img src="{{ community['icon_url'] }}" alt="{{ community['display_name'] }}" title="{{ community['display_name'] }}">
-    </div>
+    </a>
     {% endfor %}
   </div>
 
   <div class="twitchians">
-    {% for twitchian in twitchians %}
-    <div class="twitchian">
+    {% for twitchian in sorted_twitchians %}
+    <div class="twitchian {% for community in twitchian['communities'] %}community-{{ community }} {% endfor %}">
       <a href="https://twitch.tv/{{ twitchian['username'] }}" target="_blank" class="avatar">
         <img src="{{ twitchian['avatar_url'] }}" alt="{{ twitchian['username'] }}" title="{{ twitchian['username'] }}">
       </a>

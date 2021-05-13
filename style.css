@@ -3,6 +3,18 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
+h1, h2, h3 {
+  text-align: center;
+}
+
+p.header-image {
+  text-align: center;
+}
+p.header-image img {
+  max-width: 100%;
+  max-height: 400px;
+}
+
 .communities {
   display: flex;
   align-items: center;
@@ -10,20 +22,20 @@ body {
 }
 .communities img {
   filter: drop-shadow(2px 4px 6px #333);
+  width: 56px;
+}
+@media (max-width: 450px) {
+  .communities img {
+    width: 36px;
+  }
 }
 
 .twitchian {
-  width: 250px;
   border: 1px #64E0B8 solid;
-  flex-grow: 1;
   text-align: center;
   background: linear-gradient(-45deg, #64E0B8, #ECFC08);
-  margin: 0 10px 10px 0;
   border-radius: 3px;
   padding: 5px;
-}
-.twitchian:last-child {
-  margin-right: 0;
 }
 .twitchian .communities {
   height: 30px;
@@ -34,10 +46,50 @@ body {
 }
 
 .twitchians {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+  display: grid;
+  /* align-items: center; */
+  /* justify-content: space-between; */
+  /* flex-wrap: wrap; */
+  grid-auto-columns: auto;
+  grid-auto-rows: auto;
+  width: 100%;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(6, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+@media (max-width: 1000px) {
+  .twitchians {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+@media (max-width: 850px) {
+  .twitchians {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+@media (max-width: 650px) {
+  .twitchians {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 450px) {
+  .twitchians {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 250px) {
+  .twitchians {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+}
+
+.hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */

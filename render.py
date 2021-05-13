@@ -7,6 +7,8 @@ with open('template.html') as f:
 with open('data.json') as f:
   data = json.load(f)
 
+data['sorted_twitchians'] = sorted(data['twitchians'], key=lambda k: k['username'])
+
 t = Template(content)
 
 with open('index.html', 'w+') as f:
