@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Who is going to ARC?</title>
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css">
   <script>
     function onload(fn) {
@@ -78,7 +79,7 @@
     {% for twitchian in sorted_twitchians %}
     <div class="twitchian {% for community in twitchian['communities'] %}community-{{ community }} {% endfor %}">
       <a href="https://twitch.tv/{{ twitchian['username'] }}" target="_blank" class="avatar">
-        <img src="{{ twitchian['avatar_url'] }}" alt="{{ twitchian['username'] }}" title="{{ twitchian['username'] }}">
+        <img src="{{ twitchian['avatar_url'] }}" alt="{{ twitchian['username'] }}" title="{{ twitchian['username'] }}" width="70" height="70">
       </a>
       <p class="name">{{ twitchian['username'] }}</p>
       <div class="communities">
