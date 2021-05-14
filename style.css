@@ -7,12 +7,29 @@ h1, h2, h3 {
   text-align: center;
 }
 
-p.header-image {
+p.info-subhead {
+  font-weight: 200;
+  font-size: 2em;
   text-align: center;
 }
-p.header-image img {
+
+.header-image {
+  text-align: center;
+  display: block;
+}
+.header-image img {
   max-width: 100%;
   max-height: 400px;
+}
+
+.logo-help {
+  font-weight: 100;
+  text-align: center;
+}
+
+.community-help {
+  font-weight: 300;
+  text-align: center;
 }
 
 .communities {
@@ -45,18 +62,41 @@ p.header-image img {
   width: 24px;
 }
 
+.divider {
+  width: 80%;
+  border-bottom: 1px #64E0B8 solid;
+  margin: auto;
+}
+
 .twitchians {
   display: grid;
-  /* align-items: center; */
-  /* justify-content: space-between; */
-  /* flex-wrap: wrap; */
   grid-auto-columns: auto;
   grid-auto-rows: auto;
   width: 100%;
   grid-auto-flow: row;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(10, 1fr);
   grid-column-gap: 10px;
   grid-row-gap: 10px;
+}
+@media (max-width: 1800px) {
+  .twitchians {
+    grid-template-columns: repeat(9, 1fr);
+  }
+}
+@media (max-width: 1600px) {
+  .twitchians {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
+@media (max-width: 1400px) {
+  .twitchians {
+    grid-template-columns: repeat(7, 1fr);
+  }
+}
+@media (max-width: 1200px) {
+  .twitchians {
+    grid-template-columns: repeat(6, 1fr);
+  }
 }
 @media (max-width: 1000px) {
   .twitchians {

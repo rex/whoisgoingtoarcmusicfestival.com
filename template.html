@@ -60,13 +60,26 @@
 </head>
 <body>
   <!-- <h1 style="text-align: center;">Twitchians that are going to...</h1> -->
-  <p class="header-image">
+  <a href="https://arcmusicfestival.com/" target="_blank" class="header-image">
     <img src="arc-music-festival-ravejungle.png" alt="ARC Header">
-  </p>
+  </a>
 
-  <div class="community-help">
-    <h3>Click to filter by community. Click again to reset.</h3>
-  </div>
+  <p class="logo-help">(Click the logo to go to the ARC home page)</p>
+
+  <h1>What is this?</h1>
+
+  <p class="info-subhead">This website aims to do only one thing: connect people with their communities going to ARC Music Festival. Easily find other members of your community you maybe didn't know were going, or discover other people you may have seen in passing on Twitch.</p>
+
+  <h1>I'm going! How do I add myself or someone to this list?</h1>
+
+  <p class="info-subhead">Whisper me on Twitch (<code>PierceMoore</code>) and I will add you. Please include any communities you are a part of so I can include them!</p>
+
+
+  <div class="divider">&nbsp;</div>
+
+  <p class="community-help">
+    Click a community's logo to show only members of that community. Click again to reset.
+  </p>
   <div class="communities">
     {% for community in communities.values() %}
     <a href="#" class="community" data-community="{{ community['name'] }}">
@@ -83,7 +96,7 @@
       </a>
       <p class="name">{{ twitchian['username'] }}</p>
       <div class="communities">
-        {% for community in twitchian['communities'] %}
+        {% for community in twitchian['communities'] | sort %}
           {% set c = communities[community] %}
           <img src="{{ c['icon_url'] }}" alt="{{ c['display_name'] }}" title="{{ c['display_name'] }}">
         {% endfor %}
